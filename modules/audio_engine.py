@@ -60,12 +60,9 @@ class Audio_Engine:
         return response
 
     def speak(self, response):
-        if response['success'] == True and response['transcription'] != None:
             engine = self.ttsengine
-            engine.say(response['transcription'])
+            engine.say(response)
             engine.runAndWait()
-        else:
-            print(f"\n\nError Occured:\n{response['error']}")
         
 
 
